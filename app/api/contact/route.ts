@@ -2,15 +2,16 @@ import { NextResponse } from "next/server"
 import { Resend } from "resend"
 import { createClient } from "@supabase/supabase-js"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
-
 export async function POST(req: Request) {
   try {
+    /* CLIENTS ERST ZUR LAUFZEIT ERSTELLEN */
+    const resend = new Resend(process.env.RESEND_API_KEY!)
+
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    )
+
     const body = await req.json()
 
     const { name, email, message, website } = body
@@ -27,7 +28,7 @@ export async function POST(req: Request) {
 
     /* SEND EMAIL */
     await resend.emails.send({
-      from: "Feuerwehr Website <kontakt@deinedomain.de>",
+      from: "Feuerwehr Website <onboarding@resend.dev>",
       to: "deine@email.de",
       subject: "Neue Kontaktanfrage",
       html: `
@@ -39,6 +40,7 @@ export async function POST(req: Request) {
     })
 
     return NextResponse.json({ success: true })
+
   } catch (error) {
     console.error(error)
     return NextResponse.json({ success: false }, { status: 500 })
