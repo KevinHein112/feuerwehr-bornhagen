@@ -18,52 +18,59 @@ export default function RootLayout({
       <body className="bg-black text-white">
 
         {/* ================= HEADER ================= */}
-        <header
-        className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-zinc-800">
+<header className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-zinc-800">
 
-          <div className="relative flex items-center justify-center h-24">
+  <div className="max-w-7xl mx-auto px-4 py-3">
 
-            {/* WAPPEN LINKS */}
-            <div className="absolute left-6">
-              <img
-                src="/wappen.png"
-                alt="Feuerwehr Bornhagen"
-                className="h-20"
-              />
-            </div>
+    {/* MOBILE + DESKTOP FLEX */}
+    <div className="flex items-center justify-between">
 
-            {/* NAME MITTE */}
-            <h1 className="text-3xl font-bold tracking-wide text-center">
-              Freiwillige Feuerwehr Bornhagen
-            </h1>
+      {/* LOGO */}
+      <img
+        src="/wappen.png"
+        alt="Feuerwehr Bornhagen"
+        className="h-12 md:h-20"
+      />
 
-            {/* SOCIAL RECHTS */}
-            <div className="absolute right-6 flex gap-6">
+      {/* SOCIAL ICONS */}
+      <div className="flex gap-4">
 
-              <a
-                href="https://www.instagram.com/ffw_bornhagen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-pink-500 transition"
-              >
-                <Instagram size={30} />
-              </a>
+        <a
+          href="https://www.instagram.com/ffw_bornhagen"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-zinc-400 hover:text-pink-500 transition"
+        >
+          <Instagram size={24} />
+        </a>
 
-              <a
-                href="https://www.facebook.com/p/Feuerwehr-Bornhagen-100077586694312/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-blue-500 transition"
-              >
-                <Facebook size={30} />
-              </a>
+        <a
+          href="https://www.facebook.com/p/Feuerwehr-Bornhagen-100077586694312/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-zinc-400 hover:text-blue-500 transition"
+        >
+          <Facebook size={24} />
+        </a>
 
-            </div>
+      </div>
+    </div>
 
-          </div>
+    {/* TITEL — eigene Zeile */}
+    <h1 className="
+      text-center
+      text-lg md:text-3xl
+      font-semibold
+      tracking-wide
+      mt-2
+    ">
+      Freiwillige Feuerwehr Bornhagen
+    </h1>
 
-        </header>
-        <div className="h-[2px] bg-red-600" />
+  </div>
+
+</header>
+        
 
         {/* ================= NAVIGATION ================= */}
         <nav className="sticky top-24 z-40 bg-zinc-950 border-b border-zinc-800">
