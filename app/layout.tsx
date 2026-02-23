@@ -33,9 +33,10 @@ export default function RootLayout({
             </div>
 
             {/* TITEL */}
-            <h1 className="text-3xl font-bold tracking-wide text-center">
-              Feuerwehr Bornhagen
-            </h1>
+            <h1 className="text-3xl font-bold tracking-wide text-center leading-tight">
+  <span className="block">Feuerwehr</span>
+  <span className="block">Bornhagen</span>
+</h1>
 
             {/* SOCIAL */}
             <div className="absolute right-6 flex gap-6">
