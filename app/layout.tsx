@@ -2,7 +2,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Instagram, Facebook } from "lucide-react"
-import Navigation from "@/components/Navigation"
+import Navigation from "./components/Navigation"
 
 export const metadata: Metadata = {
   title: "Freiwillige Feuerwehr Bornhagen",
