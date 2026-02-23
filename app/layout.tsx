@@ -34,7 +34,7 @@ export default function RootLayout({
 
             {/* TITEL */}
             <h1 className="text-3xl font-bold tracking-wide text-center">
-              Freiwillige Feuerwehr Bornhagen
+              Feuerwehr Bornhagen
             </h1>
 
             {/* SOCIAL */}

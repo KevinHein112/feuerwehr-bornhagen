@@ -9,13 +9,13 @@ export default function Home() {
           Willkommen bei der
           <br />
           <span className="text-red-500">
-            Feuerwehr Bornhagen
+            Freiwilligen Feuerwehr Bornhagen
           </span>
         </h2>
 
 
         <p className="text-red-500 text-4xl md:text-5xl font-bold tracking-wide drop-shadow-[0_0_25px_rgba(239,68,68,0.9)] mb-12">
-          Wir stehen bereit – 365 Tage im Jahr, 24 Stunden am Tag. 🚒
+          Wir stehen bereit – 365 Tage im Jahr, 24 Stunden am Tag. 
         </p>
 
         <div className="max-w-4xl text-zinc-300 text-xl md:text-2xl leading-relaxed space-y-6">
