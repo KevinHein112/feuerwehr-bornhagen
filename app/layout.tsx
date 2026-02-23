@@ -34,7 +34,7 @@ export default function RootLayout({
 
             {/* TITEL */}
            <h1 className="text-2xl md:text-3xl font-bold tracking-wide text-center leading-tight">
-  Feuerwehr
+  Feuerwehr{" "}
   <br className="md:hidden" />
   Bornhagen
 </h1>
