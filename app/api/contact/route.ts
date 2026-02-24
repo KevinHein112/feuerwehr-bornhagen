@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 
     /* SEND EMAIL */
     await resend.emails.send({
-      from: "Feuerwehr Website <onboarding@resend.dev>",
+      from: "Feuerwehr Website <info@feuerwehr-bornhagen.de>",
       to: "info@feuerwehr-bornhagen.de",
       subject: "Neue Kontaktanfrage",
       html: `
