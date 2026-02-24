@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     /* SEND EMAIL */
     await resend.emails.send({
       from: "Feuerwehr Website <onboarding@resend.dev>",
-      to: "deine@email.de",
+      to: "info@feuerwehr-bornhagen.de",
       subject: "Neue Kontaktanfrage",
       html: `
         <h2>Neue Nachricht</h2>
