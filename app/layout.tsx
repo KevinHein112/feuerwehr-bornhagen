@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="bg-black text-white">
 
         {/* ================= HEADER ================= */}
-        <header className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-zinc-800">
+        <header className="sticky top-0 z-50 bg-black/95 text-white backdrop-blur border-b border-zinc-800">
 
           <div className="relative flex items-center justify-center h-24">
 
