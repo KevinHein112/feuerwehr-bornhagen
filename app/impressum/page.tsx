@@ -1,17 +1,17 @@
-export default function Page() {
+export default function ImpressumPage() {
   return (
     <main className="bg-black text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6 py-24">
 
-          <section className="text-center py-20">
-        <h2 className="text-5xl font-bold mb-6">
-          Impressum
-        </h2>
+        <section className="text-center py-20">
+          <h1 className="text-5xl font-bold mb-6">
+            Impressum
+          </h1>
         </section>
 
         <div className="space-y-6 text-zinc-300 leading-relaxed">
 
-          <p>Angaben gemäß § 5 TMG</p>
+          <p><strong>Angaben gemäß § 5 TMG</strong></p>
 
           <p>
             Freiwillige Feuerwehr Bornhagen<br />
@@ -21,17 +21,17 @@ export default function Page() {
           </p>
 
           <p>
-            Vertreten durch:<br />
+            <strong>Vertreten durch:</strong><br />
             Gemeindebrandmeister Norman Hein
           </p>
 
           <p>
-            Kontakt:<br />
+            <strong>Kontakt:</strong><br />
             E-Mail: info@feuerwehr-bornhagen.de
           </p>
 
           <p>
-            Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br />
+            <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br />
             Kevin Hein
           </p>
 
@@ -42,7 +42,9 @@ export default function Page() {
           <p>
             Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
             Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
-            können wir jedoch keine Gewähr übernehmen.
+            können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter
+            sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
+            nach den allgemeinen Gesetzen verantwortlich.
           </p>
 
           <h2 className="text-2xl font-semibold mt-10">
@@ -51,7 +53,10 @@ export default function Page() {
 
           <p>
             Unser Angebot enthält Links zu externen Websites Dritter,
-            auf deren Inhalte wir keinen Einfluss haben.
+            auf deren Inhalte wir keinen Einfluss haben. Deshalb können
+            wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+            Für die Inhalte der verlinkten Seiten ist stets der jeweilige
+            Anbieter oder Betreiber der Seiten verantwortlich.
           </p>
 
           <h2 className="text-2xl font-semibold mt-10">
@@ -59,8 +64,9 @@ export default function Page() {
           </h2>
 
           <p>
-            Die durch die Seitenbetreiber erstellten Inhalte und Werke
-            auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
+            diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge
+            Dritter sind als solche gekennzeichnet.
           </p>
 
         </div>
