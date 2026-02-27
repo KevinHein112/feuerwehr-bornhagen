@@ -16,48 +16,59 @@ export default function Navigation() {
         {/* DESKTOP NAV */}
         <div className="hidden md:flex justify-center gap-12 py-4 text-lg font-semibold">
 
-          <Link href="/" className="hover:text-red-500 transition">
+          <Link href="/" className="text-white hover:text-red-500 transition">
             Start
           </Link>
 
-          <Link href="/fahrzeuge" className="hover:text-red-500 transition">
+          <Link href="/fahrzeuge" className="text-white hover:text-red-500 transition">
             Fahrzeuge
           </Link>
 
-          <Link href="/ansprechpartner" className="hover:text-red-500 transition">
+          <Link href="/ansprechpartner" className="text-white hover:text-red-500 transition">
             Ansprechpartner
           </Link>
 
-          <Link href="/kontakt" className="hover:text-red-500 transition">
+          <Link href="/kontakt" className="text-white hover:text-red-500 transition">
             Kontakt
           </Link>
 
         </div>
 
         {/* MOBILE BAR */}
-        <div className="md:hidden flex justify-between items-center py-4">
+       <div className="md:hidden flex justify-between items-center py-4 text-white">
 
-          <span className="font-semibold text-lg">
-            Menü
-          </span>
+  <span className="font-semibold text-lg">
+    Menü
+  </span>
 
-          <button onClick={() => setOpen(!open)}>
-            {open ? <X size={28}/> : <Menu size={28}/>}
-          </button>
+  <button onClick={() => setOpen(!open)} className="text-white">
+    {open ? <X size={28}/> : <Menu size={28}/>}
+  </button>
 
-        </div>
+</div>
 
-        {/* MOBILE MENU */}
-        {open && (
-          <div className="md:hidden flex flex-col gap-6 pb-6 text-lg font-semibold">
+{/* MOBILE MENU */}
+{open && (
+  <div className="md:hidden flex flex-col gap-6 pb-6 text-lg font-semibold text-white bg-black">
 
-            <Link href="/" onClick={()=>setOpen(false)}>Start</Link>
-            <Link href="/fahrzeuge" onClick={()=>setOpen(false)}>Fahrzeuge</Link>
-            <Link href="/ansprechpartner" onClick={()=>setOpen(false)}>Ansprechpartner</Link>
-            <Link href="/kontakt" onClick={()=>setOpen(false)}>Kontakt</Link>
+    <Link href="/" className="hover:text-red-500 transition" onClick={()=>setOpen(false)}>
+      Start
+    </Link>
 
-          </div>
-        )}
+    <Link href="/fahrzeuge" className="hover:text-red-500 transition" onClick={()=>setOpen(false)}>
+      Fahrzeuge
+    </Link>
+
+    <Link href="/ansprechpartner" className="hover:text-red-500 transition" onClick={()=>setOpen(false)}>
+      Ansprechpartner
+    </Link>
+
+    <Link href="/kontakt" className="hover:text-red-500 transition" onClick={()=>setOpen(false)}>
+      Kontakt
+    </Link>
+
+  </div>
+)}
 
       </div>
 

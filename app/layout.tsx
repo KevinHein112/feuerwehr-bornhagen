@@ -73,25 +73,25 @@ export default function RootLayout({
         <main>{children}</main>
 
         {/* ================= FOOTER ================= */}
-        <footer className="border-t border-zinc-800 text-center text-zinc-500 py-10 text-sm">
+        <footer className="bg-zinc-950 border-t border-zinc-800 text-center text-zinc-400 py-12 text-sm">
 
-          <p className="mb-4">
-            © {new Date().getFullYear()} Freiwillige Feuerwehr Bornhagen
-          </p>
+  <p className="mb-4">
+    © {new Date().getFullYear()} Freiwillige Feuerwehr Bornhagen
+  </p>
 
-          <div className="flex justify-center gap-6">
+  <div className="flex justify-center gap-6">
 
-            <Link href="/impressum" className="hover:text-white transition">
-              Impressum
-            </Link>
+    <Link href="/impressum" className="text-zinc-400 hover:text-white transition">
+      Impressum
+    </Link>
 
-            <Link href="/datenschutz" className="hover:text-white transition">
-              Datenschutz
-            </Link>
+    <Link href="/datenschutz" className="text-zinc-400 hover:text-white transition">
+      Datenschutz
+    </Link>
 
-          </div>
+  </div>
 
-        </footer>
+</footer>
 
       </body>
     </html>
