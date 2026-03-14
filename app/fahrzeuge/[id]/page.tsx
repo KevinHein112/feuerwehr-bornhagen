@@ -2,38 +2,25 @@
 
 import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { supabase } from "@/lib/supabase"
+import { vehicles } from "../../data/vehicles"
+import { vehicleImages } from "../../data/images"
 
 export default function FahrzeugDetail() {
-  const { id } = useParams()
+
+  const params = useParams()
+  const id = params.id as string
+
   const router = useRouter()
 
   const [vehicle, setVehicle] = useState<any>(null)
   const [images, setImages] = useState<any[]>([])
-
   useEffect(() => {
-    loadVehicle()
-    loadImages()
-  }, [])
+    const v = vehicles.find((v) => v.id === id)
+    setVehicle(v)
 
-  async function loadVehicle() {
-    const { data } = await supabase
-      .from("vehicles")
-      .select("*")
-      .eq("id", id)
-      .single()
-
-    setVehicle(data)
-  }
-
-  async function loadImages() {
-    const { data } = await supabase
-      .from("vehicle_images")
-      .select("*")
-      .eq("vehicle_id", id)
-
-    setImages(data || [])
-  }
+    const imgs = vehicleImages.filter((img) => img.vehicle_id === id)
+    setImages(imgs)
+  }, [id])
 
   if (!vehicle)
     return (
@@ -45,7 +32,6 @@ export default function FahrzeugDetail() {
   return (
     <main className="min-h-screen bg-black text-white">
 
-      {/* BACK BUTTON */}
       <div className="max-w-6xl mx-auto px-6 pt-10">
         <button
           onClick={() => router.push("/fahrzeuge")}
@@ -55,14 +41,12 @@ export default function FahrzeugDetail() {
         </button>
       </div>
 
-      {/* ================= TITEL ================= */}
       <section className="text-center py-12">
         <h1 className="text-6xl font-bold text-red-500">
           {vehicle.type}
         </h1>
       </section>
 
-      {/* ================= TECHNISCHE DATEN ================= */}
       <section className="max-w-3xl mx-auto px-6 mb-16">
 
         <h2 className="text-3xl font-bold mb-8 text-center">
@@ -101,7 +85,6 @@ export default function FahrzeugDetail() {
 
       </section>
 
-      {/* ================= BILDER ================= */}
       <section className="max-w-6xl mx-auto px-6 pb-24">
 
         <h2 className="text-3xl font-bold mb-10 text-center">

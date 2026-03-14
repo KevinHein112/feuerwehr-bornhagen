@@ -90,7 +90,6 @@ export default function DatenschutzPage() {
           </p>
 
           <ul className="list-disc pl-6">
-            <li>Supabase Inc. – Speicherung der Formulardaten</li>
             <li>Resend Inc. – Versand von E-Mail-Nachrichten</li>
           </ul>
 

@@ -1,38 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { supabase } from "@/lib/supabase"
+import { vehicles } from "../data/vehicles"
+import { vehicleImages } from "../data/images"
 import Link from "next/link"
 
 export default function FahrzeugePage() {
 
-  const [vehicles, setVehicles] = useState<any[]>([])
-
-  useEffect(() => {
-    loadVehicles()
-  }, [])
-
-  async function loadVehicles() {
-
-    const { data, error } = await supabase
-      .from("vehicles")
-      .select(`
-        *,
-        vehicle_images (
-          image_url
-        )
-      `)
-      .order("created_at", { ascending: false })
-
-    if (!error && data) {
-      setVehicles(data)
-    }
-  }
-
   return (
     <main className="min-h-screen bg-black text-white">
 
-      {/* ================= TITLE ================= */}
+      {/* TITLE */}
       <section className="text-center py-20">
         <h2 className="text-5xl font-bold mb-6">
           Unsere Fahrzeuge
@@ -43,17 +20,17 @@ export default function FahrzeugePage() {
         </p>
       </section>
 
-      {/* ================= VEHICLES ================= */}
+      {/* VEHICLES */}
       <section className="max-w-6xl mx-auto px-6 pb-24">
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
           {vehicles.map((v) => {
 
-            // ⭐ erstes Galerie Bild
+            // erstes Bild des Fahrzeugs suchen
             const preview =
-              v.vehicle_images?.[0]?.image_url ||
-              "/placeholder.jpg"
+              vehicleImages.find(img => img.vehicle_id === v.id)?.image_url
+              || "/placeholder.jpg"
 
             return (
               <Link

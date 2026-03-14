@@ -1,23 +1,9 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
-import { supabase } from "@/lib/supabase"
+import { useMemo } from "react"
+import { contacts } from "../data/contacts"
 
 export default function AnsprechpartnerPage() {
-  const [contacts, setContacts] = useState<any[]>([])
-
-  useEffect(() => {
-    loadContacts()
-  }, [])
-
-  async function loadContacts() {
-    const { data, error } = await supabase
-      .from("contacts")
-      .select("*")
-      .order("created_at")
-
-    if (!error && data) setContacts(data)
-  }
 
   const GROUPS = {
     Wehrführung: "brandmeister",
@@ -33,7 +19,7 @@ export default function AnsprechpartnerPage() {
         c.role?.toLowerCase().includes(keyword)
       ),
     }))
-  }, [contacts])
+  }, [])
 
   return (
     <main className="bg-black text-white">
@@ -72,18 +58,10 @@ function ContactSection({ title, people }: any) {
   return (
     <section className="py-20">
 
-      {/* GROUP TITLE CENTERED */}
-      <h2 className="
-        text-3xl
-        font-semibold
-        text-red-500
-        text-center
-        mb-12
-      ">
+      <h2 className="text-3xl font-semibold text-red-500 text-center mb-12">
         {title}
       </h2>
 
-      {/* CARDS */}
       <div className="grid md:grid-cols-2 gap-6 justify-center">
         {people.map((person: any) => (
           <ContactCard key={person.id} person={person} />
@@ -116,18 +94,10 @@ function ContactCard({ person }: any) {
         hover:shadow-red-600/20
       "
     >
-      {/* NAME */}
-      <p className="
-        text-2xl
-        font-bold
-        mb-2
-        transition
-        group-hover:text-red-500
-      ">
+      <p className="text-2xl font-bold mb-2 transition group-hover:text-red-500">
         {person.name}
       </p>
 
-      {/* ROLE */}
       <p className="text-zinc-400 text-lg">
         {person.role}
       </p>
